@@ -1,41 +1,74 @@
-// In component  function always first letter Capital
+ import React, { useState } from 'react';
 import './App.css';
-import React , { useState } from 'react';
-import About from './components/About';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import "bootstrap/dist/js/bootstrap.bundle.min.js"
-
+import './index.js'
+import UserContextProvider from './context/UserContextProvider';
+// import Header from './components/Header/Header';
+// import Footer from './components/Footer/Footer';
+// import Home from './components/Home/Home';
+import Profile from './components/Profile';
+import Login from './components/Login';
 
 function App() {
- let [Counter , setCounter] =  useState(15) //counter -:variable , setCounter-; function
-  // let counter = 15
-  const addValue = () =>{
-//  counter = counter + 1;
-console.log('Clicked' , Counter)
-setCounter(Counter + 1)
- console.log("Succesfully", Counter)
-  }
-  const remove = () => {
-    setCounter(Counter-1)
-    if(Counter < 1){
-      console.log('not possible')
-    }
-    else{
-       console.log('continue')
-    }
+  // const [color, setColor] = useState('');
 
-  }
   return (
     <>
-  
-  
-    <h1>Chai aur react</h1>
-     <h2>Counter value: {Counter}</h2>
-     <button onClick={addValue}>
-    Add value{Counter}
-     </button>
-     <button onClick={remove}>remove value{Counter}</button>
-     <About/>
+      {/* color changes
+      <div className='w-full h-screen duration-200' style={{ backgroundColor: color }}>
+        <div className='fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2'>
+          <div className='flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl'>
+            <button
+              onClick={() => setColor('red')}
+              className='outline-none px-4 py-1 rounded-full text-white shadow-lg'
+              style={{ backgroundColor: 'red' }}
+            >
+              Red
+            </button>
+            <button
+              onClick={() => setColor('green')}
+              className='outline-none px-4 py-1 rounded-full text-white shadow-lg'
+              style={{ backgroundColor: 'green' }}
+            >
+              Green
+            </button>
+            <button
+              onClick={() => setColor('orange')}
+              className='outline-none px-4 py-1 rounded-full text-white shadow-lg'
+              style={{ backgroundColor: 'orange' }}
+            >
+              Orange
+            </button>
+          </div>
+        </div>
+      </div> */}
+
+      {/* 
+      <div className='w-full h-screen duration-2'>
+      <div className='min-h-screen bg-orange-100 flex flex-col items-center justify-center'>
+        <h1 className='text-4xl text-center text-black'>Password generator</h1>
+        <div className='container'>
+          <Password/>
+          <CurrencyConverter/>
+        </div>
+      </div>
+      <h2 className="text-center">Chai or code</h2>
+      <br/>
+      <h2 className="text-center">Counter value</h2>
+      <button onClick={addValue} className="block mx-auto mt-2">Add value {counter}</button>
+      <br/>
+      <button className="block mx-auto">Remove value {counter}</button>
+      <p>footer: {counter}</p> 
+      */}
+      {/* <Header/>
+      <Footer/>
+      <Home/> */}
+
+      <UserContextProvider>
+                <Login/>
+        <Profile/>
+
+        
+      </UserContextProvider>
     </>
   );
 }
