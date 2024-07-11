@@ -8,7 +8,7 @@ function Profile() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center">
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center  dark:bg-gray-500">
         <h2 className="text-2xl font-bold mb-4">Welcome, {user.username}</h2>
         <p className="text-gray-700">We're glad to have you back!</p>
       </div>
